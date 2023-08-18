@@ -1,0 +1,95 @@
+<template>
+    <!--<center>
+        <u><b><h1>Loan Details:</h1></b></u>        
+    </center>-->
+    <center><lightning-button label="Get Loan Records" onclick={handleSearch} variant="brand"></lightning-button></center>
+    <!--<br>-->
+    <!-- -->
+    <table class="slds-table slds-table_call-buffer slds-table_bordered slds-var-m-top_small">
+        <thead>
+            <tr class="slds-line-height_reset">
+                <th class="" scope="col">
+                    <div class="slds-truncate" title="loanAmount">Amount</div>
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate" title="loanStage">Stage</div>
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate" title="tenure">Tenure</div>
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate" title="emi">EMI</div>
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate" title="totalAmount">Total Amount</div>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <template for:each={searchResult} for:item="loan">
+                <tr class="slds-hint-parent" key={loan.Amount__c}>
+                    <td>
+                        <div class="slds-truncate">{loan.Amount__c}</div>
+                    </td>
+                    <td>
+                        <div class="slds-truncate" title="loanStage">{loan.Stage__c}</div>
+                    </td>
+                    <td>
+                        <div class="slds-truncate" title="tenure">{loan.Tenure__c}</div>
+                    </td>
+                    <td>
+                        <div class="slds-truncate" title="emi">{loan.EMI__c}</div>
+                    </td>
+                    <td>
+                        <div class="slds-truncate" title="totalAmount">{loan.Total_Amount__c}</div>
+                    </td>
+                </tr>
+            </template>
+        </tbody>
+    </table>
+    <br>
+
+
+
+    <center><lightning-button label="Fetch Employees" onclick={handleEmp} variant="brand"></lightning-button></center>
+    <div class="slds-p-around_medium lgc-bg">
+        <lightning-textarea readonly value={apiResponse} rows="20" style="height:150px;"></lightning-textarea>
+    </div>
+    <!--<table class="slds-table slds-table_call-buffer slds-table_bordered slds-var-m-top_small">
+        <thead>
+            <tr class="slds-line-height_reset">
+                <th class="" scope="col">
+                    <div class="slds-truncate" title="id">Emp Id</div>
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate" title="empName">Name</div>
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate" title="salary">Salary</div>
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate" title="age">Age</div>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <template for:each={apiResponse} for:item="employee">
+                <tr class="slds-hint-parent" key={employee.id}>
+                    <td>
+                        <div class="slds-truncate" title={employee.id}>{employee.id}</div>
+                    </td>
+                    <td>
+                        <div class="slds-truncate" title={employee.employee_name}>{employee.employee_name}</div>
+                    </td>
+                    <td>
+                        <div class="slds-truncate" title={employee.employee_salary}>{employee.employee_salary}</div>
+                    </td>
+                    <td>
+                        <div class="slds-truncate" title={employee.employee_age}>{employee.employee_age}</div>
+                    </td>
+                </tr>
+            </template>
+        </tbody>
+    </table>-->
+    
+</template>

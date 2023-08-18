@@ -1,0 +1,21 @@
+<template>
+    <lightning-card title="Loan Information">
+            <div class="slds-p-around_medium">
+                <lightning-input label="Loan Id" value={Id} onchange={handleLoan}></lightning-input><br>
+                <lightning-button label="Get Loan Records" onclick={handleSearch} variant="brand"></lightning-button>
+                <template if:true={loanRecord}>
+                <p><b>Loan Name:</b>{loanRecord.Name}</p>
+                <p><b>Amount:</b>{loanRecord.Amount__c}</p>
+                <p><b>EMI:</b>{loanRecord.EMI__c}</p>
+                <p><b>ROI(PA):</b>{loanRecord.ROI_PA__c}</p>
+                <p><b>ROI(PM):</b>{loanRecord.ROI_PM__c}</p>
+                <p><b>Tenure:</b>{loanRecord.Tenure__c}</p>
+                <p><b>Total Amount:</b>{loanRecord.Total_Amount__c}</p>
+                <p><b>Stage:</b>{loanRecord.Stage__c}</p>
+                </template>
+            </div>
+        <template if:false={loanRecord}>
+            <div class="slds-p-around_medium">No loan records found for provided ID</div>
+        </template>
+    </lightning-card>
+</template>
